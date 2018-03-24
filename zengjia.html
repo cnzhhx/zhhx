@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>无标题文档</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+</head>
+<script type="text/javascript">
+	function add() {
+		var li = document.createElement('li');
+		var txt = document.createTextNode('东');
+		li.appendChild(txt);
+		document.getElementsByTagName('ul')[0].appendChild(li);
+	}
+</script>
+<body>
+	<h1>创建节点</h1>
+	<input type="button" value="增加" onclick="add();"/>
+	<ul>
+		<li>春</li>
+		<li>夏</li>
+		<li>秋</li>
+	</ul>
+</body>
+</html>
