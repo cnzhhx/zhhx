@@ -18,12 +18,13 @@
 		var sel = document.getElementById('prov');
 		var opt = '';
 
-		if (sel.value == '-1') {
+		if(sel.value == '-1') {
 			document.getElementById('city').innerHTML = opt;
 			return;
 		}
-		for(var i=0 , len=area[sel.value].length; i<len; i++){
-			opt opt + '<option value"'+ i +'">' + area[sel.value][i] + '</option>';
+
+		for(var i=0 , len=area[sel.value].length; i<len; i++) {
+			opt = opt + '<option value"'+ i +'">' + area[sel.value][i] + '</option>';
 		}
 
 		document.getElementById('city').innerHTML = opt;
