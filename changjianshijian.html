@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>无标题文档</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+</head>
+
+<script type="text/javascript">
+	function t1() {
+		document.getElementsByName('usename')[0].style.border = '1px solid red';
+	}
+	function t2() {
+		document.getElementsByName('usename')[0].style.border = '';
+	}
+</script>
+<body>
+	<p>
+		用户名：<input type="text" name="usename" onfocus='t1();' onblur="t2();">
+	</p>
+	<p>
+		Email: <input type="text" name="email" >
+	</p>
+</body>
+</html>
