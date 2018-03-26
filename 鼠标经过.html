@@ -19,9 +19,18 @@
 	function t1() {
 		alert('你是谁');
 	}
+	function t2() {
+		alert('请填写完整');
+		return false;
+	}
 </script>
 <body>
 	<h1>鼠标经过事件</h1>
 	<div onmouseover="t1();"></div>
+	<form action="鼠标经过.html" onsubmit="return t2();">
+		<p><input type="text" name="uesname"></p>
+		<p><input type="text" name="email"></p>
+		<p><input type="submit" value="提交"></p>
+	</form>
 </body>
 </html>
