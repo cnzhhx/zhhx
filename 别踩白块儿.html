@@ -42,14 +42,24 @@
 </body>
 <script type="text/javascript">
 
+	function init() {
+		for(var i=0;i<3;i++) {
+			crow();
+		}
+	}
+
 	//创建div row跟其子div
 	function crow(){
 		var row = cdiv('row');
+		var classes = createSn();
+
 		for(var i=0; i<4;i++) {
-			row.appendChild(cdiv('cell'));
-		}
+			row.appendChild(cdiv(classes[i]));
+		}2
 		$('container').appendChild(row);
 	}
+
+	//返回一个数组
 
 	//创建div ，它的类名是className
 	function cdiv(className) {
@@ -58,11 +68,21 @@
 		return div;
 	}
 
+	//返回一个数组，随机其中一个单元的值是cell black，其他的3个皆为cell
+	function createSn() {
+		var arr = ['cell','cell','cell','cell'];
+		var i = Math.floor(Math.random()*4)//floor向下取整，random随机取0到1的数  不能等于1
+		arr[i] = 'cell black';
+		return arr;
+	}
+
 	//按照id获取对象
 
 	function $(id) {
 		return document.getElementById(id);
 	}
-	crow();
+
+	init()
+
 </script>
 </html>
