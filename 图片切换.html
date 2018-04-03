@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>无标题文档</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+</head>
+
+<body>
+	<img id="icon" src="C:/Users/张浩翔/Documents/GitHub/zhhx/101.jpeg">
+	<p></p>
+	<button id="prev">上一张</button>
+	<button id="next">下一张</button>
+</body>
+<script type="text/javascript">
+
+	var maxIndex = 3, minIndex = 1, currentIndex = minIndex;
+
+	var icon = document.getElementById("icon");
+	var prev = document.getElementById("prev");
+	var next = document.getElementById("next");
+
+	prev.onclick = function () {
+		if (currentIndex === minIndex) {
+			currentIndex = maxIndex;
+		}else {
+			currentIndex --;
+		}
+
+		icon.setAttribute("src", "C:/Users/张浩翔/Documents/GitHub/zhhx/10" + currentIndex + ".jpeg");
+	} 
+	next.onclick = function() {
+		if (currentIndex === maxIndex) {
+			currentIndex = minIndex;
+		}else {
+			currentIndex ++;
+		}
+
+		icon.setAttribute("src", "C:/Users/张浩翔/Documents/GitHub/zhhx/10" + currentIndex + ".jpeg");
+	} 
+
+</script>
+</html>
