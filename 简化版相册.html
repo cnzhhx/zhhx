@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="c:/myword/reset.css">
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<style type="text/css">
+	p {
+		margin: 10px;
+		color: orangered;
+		font-size: 20px;
+	}
+	li {
+		float: left;
+		margin-right: 35px;
+	}
+</style>
+</head>
+
+<body>
+	<p id="des">美丽的大自然</p>
+	<img src="C:\Users\张浩翔\Pictures\Saved Pictures\fengjing0.jpg" id="big_img" width="540">
+	<ul id="fj">
+		<li>
+			<a href="C:\Users\张浩翔\Pictures\Saved Pictures\fengjing0.jpg" title="美丽的大自然">
+				<img src="C:\Users\张浩翔\Pictures\Saved Pictures\fengjing0.jpg" width="100" alt="美丽的大自然">
+			</a>
+		</li>
+		<li>
+			<a href="C:\Users\张浩翔\Pictures\Saved Pictures\fengjing1.jpg" title="樱花">
+				<img src="C:\Users\张浩翔\Pictures\Saved Pictures\fengjing1.jpg" width="105" alt="樱花">
+			</a>
+		</li>
+		<li>
+			<a href="C:\Users\张浩翔\Pictures\Saved Pictures\fengjing2.jpg" title="风车">
+				<img src="C:\Users\张浩翔\Pictures\Saved Pictures\fengjing2.jpg" width="110" alt="风车">
+			</a>
+		</li>
+		<li>
+			<a href="C:\Users\张浩翔\Pictures\Saved Pictures\fengjing3.jpg" title="乡村">
+				<img src="C:\Users\张浩翔\Pictures\Saved Pictures\fengjing3.jpg" width="120" alt="乡村">
+			</a>
+		</li>
+	</ul>
+	<script type="text/javascript">
+		window.onload = function () {
+			var ul = document.getElementById('fj');
+			var alist = document.getElementsByTagName('a');
+			var des = document.getElementById('des');
+			var big_img = document.getElementById('big_img');
+
+
+			for (var i = 0; i < alist.length; i++) {
+				alist[i].onclick = function () {
+
+					big_img.src = this.href;
+					des.innerHTML = this.title;
+					return false;
+				}
+			}
+		}
+	</script>
+</body>
+</html>
