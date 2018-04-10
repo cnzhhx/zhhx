@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>zhhx</title>
+	<style type="text/css">
+		#prompt {
+			font-size: 13px;
+			color: darkgray;
+		}
+		#score {
+			border: 1px solid darkgray;
+		}
+		.right {
+			background-size: 15px 15px;
+			color:lightgreen !important;
+		}
+		.error {
+			background-size: 15px 15px;
+			color: red !important;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<label>您的成绩:</label>
+		<input type="text" id="score" placeholder="请输出分数" name="">
+		<span id="prompt">请输入您的成绩！</span>
+	</div>
+	<script type="text/javascript">
+		window.onload = function () {
+			$('score').onblur = function () {
+				var value = parseFloat($('score').value);
+
+				if (isNaN(value)) {
+					$('prompt').innerText = '输入成绩不正确';
+					$('prompt').className = 'error';
+					$('score').style.borderColor = 'red';
+				}else if(value >= 0 && value <= 100) {
+					$('prompt').innerText = '输入成绩正确';
+					$('prompt').className = 'right';
+					$('score').style.borderColor = 'lightgreen';					
+				}else {
+					$('prompt').innerText = '成绩必须在0到100之间';
+					$('prompt').className = 'error';
+					$('score').style.borderColor = 'red';					
+				}
+			}
+			$('score').onclick = function () {
+				$('prompt').innerText = '请输入你的成绩';
+				$('prompt').className = '';
+				$('score').style.borderColor = 'darkgray';
+				$('score').style.outline = 'none';
+				$('score').value = ''
+			}
+		}
+
+		function $(id) {
+			return typeof id === 'string' ? document.getElementById(id) : null;
+		}
+	</script>
+</body>
+</html>
