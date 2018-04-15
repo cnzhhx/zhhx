@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>zhhx</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		body {
+			background-color: #000;
+			text-align: center;
+			padding: 100px;
+		}
+		#pic {
+			display: none;
+		}
+		#time {
+			font-size: 100px;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="time">5</div>
+	<img id="pic" src="C:\Users\张浩翔\AppData\Local\GitHubDesktop\app.ico">
+<script type="text/javascript">
+	window.onload = function () {
+		var timer = setInterval(function () {
+			$('time').innerText -=1;
+
+			if($('time').innerText === '0') {
+				clearInterval(timer);
+
+				$('time').style.display = 'none';
+				$('pic').style.display = 'block';
+			}
+		}, 1000);
+	};
+	function $(id) {
+		return typeof id === 'string' ? document.getElementById(id) : null;
+	}
+</script>
+</body>
+</html>
