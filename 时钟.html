@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>zhhx</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		#box {
+			width: 600px;
+			height: 600px;
+			background: url("C:/Users/张浩翔/Documents/GitHub/zhhx/time images/clock.jpg");
+			margin: 10px auto;
+			position: relative;
+		}
+
+		#hour, #min, #second {
+			position: absolute;
+			left: 50%;
+			top: 0;
+			width: 30px;
+			height: 600px;
+			margin-left: -15px;
+		}
+		
+
+		#min {
+			background: url("C:/Users/张浩翔/Documents/GitHub/zhhx/time images/minute.png") no-repeat center center;
+		}
+		#hour {
+			background: url("C:/Users/张浩翔/Documents/GitHub/zhhx/time images/hour.png") no-repeat center center;
+		}	
+		#second {
+			background: url("C:/Users/张浩翔/Documents/GitHub/zhhx/time images/second.png") no-repeat center center;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="hour"></div>
+		<div id="min"></div>
+		<div id="second"></div>
+	</div>
+	<script type="text/javascript">
+		window.onload = function () {
+			//获取需要的标签
+			var hour = document.getElementById('hour');
+			var min = document.getElementById('min');
+			var second = document.getElementById('second');
+			//开启定时器
+			setInterval(function () {
+				//当前时间
+				var date = new Date();
+
+				//求出时分秒
+				var millS = date.getMilliseconds();
+				var s = date.getSeconds() + millS / 1000;
+				var m = date.getMinutes() + s / 60;
+				var h = date.getHours() % 12 + m / 60;
+
+
+	
+				//旋转
+				hour.style.transform = 'rotate(' + h * 30 +'deg)';
+				min.style.transform = 'rotate(' + m * 6 +'deg)';
+				second.style.transform = 'rotate(' + s * 6 +'deg)';
+			}, 10);
+		}
+	</script>
+</body>
+</html>
