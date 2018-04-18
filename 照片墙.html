@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>zhhx</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			border: 0;
+		}
+		html, body, ul {
+			width: 100%;
+			height: 100%;
+		}
+		#ps {
+			position: relative;
+		}
+		#ps li {
+			width: 250px;
+			height: 360px;
+			box-shadow: 0 0 10px #000;
+			position: absolute;
+
+			transition: all 1s;
+		}
+		#ps li.current {
+			left: 50% !important;
+			top: 50% !important;
+			transform: rotate(0deg) translate(-50%, -50%) scale(1.5, 1.5) !important;
+			z-index: 101;
+		}
+	</style>
+</head>
+<body>
+	<ul id="ps"></ul>
+<script type="text/javascript" src="C:\Users\张浩翔\Documents\GitHub\zhhx\UnderScore\UnderScore.js"></script>
+<script type="text/javascript">
+	window.onload = function () {
+		//获取需要的标签
+		var ps = document.getElementById('ps');
+
+		//动态创建li标签
+		for (var i = 0; i < 9 ; i++) {
+			var li = document.createElement('li');
+			ps.appendChild(li);
+
+			//创建img标签
+			var img = document.createElement('img');
+			img.src = 'C:/Users/张浩翔/Documents/GitHub/zhhx/照片墙images/pic' + (i + 1)+'.jpg';
+			li.appendChild(img);
+		}
+
+		//获取所有的li
+		var allLis = ps.children;
+
+		//求出屏幕的宽度和高度
+		var screenW = document.documentElement.clientWidth - 250;
+		var screenH = document.documentElement.clientHeight - 360;
+
+		//遍历
+		for (var j = 0; j < allLis.length; j++) {
+			//取出单个li标签
+			var li = allLis[j];
+
+			//随机分布
+			li.style.left = _.random(0, screenW) + 'px';
+			li.style.top = _.random(0, screenH) + 'px';
+
+			//随机角度
+			li.style.transform = 'rotate(' + _.random(0, 360) +'deg)';
+
+			//监听点击事件
+			li.onclick = function () {
+				for(var i = 0; i < allLis.length; i++) {
+					allLis[i].className = '';
+				}
+				this.className = 'current';
+			}
+
+		}
+	}
+</script>
+</body>
+</html>
