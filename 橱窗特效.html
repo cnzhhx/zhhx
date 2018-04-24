@@ -80,7 +80,7 @@
         //鼠标操作
         mask.onmousedown = function (event) {
         	var beginX = event.clientX - mask.offsetLeft;
-
+        		console.log(mask.offsetLeft);
         	//移动
         	document.onmousemove = function (event) {
         		var endX = event.clientX - beginX;
@@ -91,7 +91,7 @@
         		}else if(endX >= box.offsetWidth - mask.offsetWidth){
         			endX = box.offsetWidth - mask.offsetWidth;
         		}
-        		console.log(endX);
+        		//console.log(endX);
                  // 3.4 动起来
                 mask.style.left = endX + 'px';       
                 
