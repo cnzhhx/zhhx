@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>zhhx</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			border: none;
+			list-style: none;
+		}
+
+		.nav{
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<header id="head">
+		<img src="C:\Users\张浩翔\Documents\GitHub\zhhx\导航置顶images\top.png">
+	</header>
+	<nav id="nav">
+		<img src="C:\Users\张浩翔\Pictures\Camera Roll\淘宝导航.png">
+	</nav>
+	<section>
+		<img src="C:\Users\张浩翔\Documents\GitHub\zhhx\导航置顶images\body01.png">
+		<img src="C:\Users\张浩翔\Documents\GitHub\zhhx\导航置顶images\body02.png">
+	</section>
+<script type="text/javascript" src="C:/Users/张浩翔/Documents/GitHub/zhhx/myFunc.js"></script>
+<script type="text/javascript">
+	window.onload = function () {
+		//求出offsetHeight
+		var nav_top_height = $("nav").offsetTop;
+
+		//监视窗口滚动
+		window.onscroll = function () {
+			var scroll_top_height = scroll().top;
+
+			//判断
+			if(scroll_top_height >= nav_top_height) {
+				$("nav").className = "nav";
+
+			}else {
+				$("nav").className = "";
+
+			}
+		}
+	}
+</script>
+</body>
+</html>
