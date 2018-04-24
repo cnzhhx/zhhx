@@ -21,3 +21,8 @@ function scroll() {
         left: document.body.scrollLeft
     }
 }
+
+
+function $(id) {
+    return typeof id ==="string" ? document.getElementById(id) : null;
+}
