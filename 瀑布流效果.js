@@ -3,46 +3,48 @@ window.onload = function () {
 	waterFull("main", "box");
 
 	//动态加载图片
-	window.onscroll = function () {
-		if(checkWillLoadImage()) {
-			//造数据
-			var dataArr = [
-			{"src":"img10.jpg"},
-			{"src":"img18.jpg"},
-			{"src":"img19.jpg"},
-			{"src":"img16.jpg"},
-			{"src":"img15.jpg"},
-			{"src":"img20.jpg"},
-			{"src":"img13.jpg"},
-			{"src":"img12.jpg"},
-			{"src":"img11.jpg"}
 
-			];
+    window.onscroll = function () {
 
-			//创建元素
-			for (var i = 0; i < dataArr.length; i++) {
-				var newBox = document.createElement("div");
-				newBox.className = "box";
-				$("main").appendChild(newBox);
+            if(checkWillLoadImage()){
+                //造数据
+                var dataArr = [
+                    {"src": "img04.jpg"},
+                    {"src": "img06.jpg"},
+                    {"src": "img08.jpg"},
+                    {"src": "img09.jpg"},
+                    {"src": "img10.jpg"},
+                    {"src": "img12.jpg"},
+                    {"src": "img14.jpg"},
+                    {"src": "img16.jpg"},
+                    {"src": "img18.jpg"}
+                ];
 
-				var newPic = document.createElement("div");
-				newPic.className = "Pic";
-				newBox.appendChild(newPic);
+                //创建元素
+                for(var i=0; i<dataArr.length; i++){
+                    var newBox = document.createElement("div");
+                    newBox.className = "box";
+                    $("main").appendChild(newBox);
 
-				var newImg = document.createElement("img");
-				newImg.src = "C:/Users/张浩翔/Documents/GitHub/zhhx/瀑布流效果images/" + dataArr[i].src;
-				newPic.appendChild(newImg);				
-			}
-			//重新布局
-			waterFull("main", "box");
-		}
-	}
+                    var newPic = document.createElement("div");
+                    newPic.className = "pic";
+                    newBox.appendChild(newPic);
+
+                    var newImg = document.createElement("img");
+                    newImg.src = "C:/Users/张浩翔/Documents/GitHub/zhhx/瀑布流效果images/" + dataArr[i].src;
+                    newPic.appendChild(newImg);
+                }
+
+                //重新布局
+                waterFull("main", "box");
+            }
+
+    };
 
 };
 
 
 
-//实现瀑布流布局
 function waterFull(parent, child) {
     // 1. 父盒子居中
     // 1.1 获取所有的盒子
@@ -59,16 +61,18 @@ function waterFull(parent, child) {
 
 
 
+
     //子盒子的定位
     //定义高度数组
     var heightArr = [], boxHeight = 0,minBoxHeight = 0, minBoxIndex = 0;
     //遍历子盒子
-    for(var i=0 ; i<allBox.length ; i++) {
+    for(var i=0 ; i<allBox.length; i++) {
     	//求出每一个子盒子的高度
     	boxHeight = allBox[i].offsetHeight;
     	//取出第一行盒子的高度放入高度数组
     	if (i < cols) {
     		heightArr.push(boxHeight);
+    		allBox[i].style = '';
     	} else {
     		//取出最矮盒子的高度
     		minBoxHeight = _.min(heightArr);
