@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>zhhx</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        #slider {
+            width: 750px;
+            height: 320px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        #top {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #top ul {
+            width: 4500px;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #top ul li {
+            width: 750px;
+            height: 320px;
+            float: left;
+        }
+
+        #slider ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        #slider ol li {
+            width: 20px;
+            height: 20px;
+            background-color: darkgray;
+            display: inline-block;
+            margin-right: 3px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #slider ol li.current {
+            background-color: orangered;
+        }
+    </style>	
+</head>
+<body>
+	<div id="slider">
+    <div id="top">
+        <ul id="ul">
+            <li><img src="C:\Users\张浩翔\Documents\GitHub\zhhx\无线轮播图片/pic01.jpg" alt=""></li>
+            <li><img src="C:\Users\张浩翔\Documents\GitHub\zhhx\无线轮播图片/pic02.jpg" alt=""></li>
+            <li><img src="C:\Users\张浩翔\Documents\GitHub\zhhx\无线轮播图片/pic03.jpg" alt=""></li>
+            <li><img src="C:\Users\张浩翔\Documents\GitHub\zhhx\无线轮播图片/pic04.jpg" alt=""></li>
+            <li><img src="C:\Users\张浩翔\Documents\GitHub\zhhx\无线轮播图片/pic05.jpg" alt=""></li>
+        </ul>
+    </div>
+    <ol id="ol">
+    </ol>
+</div>
+<script type="text/javascript" src="C:/Users/张浩翔/Documents/GitHub/zhhx/myFunc.js"></script>
+<script type="text/javascript">
+	window.onload = function () {
+		//获取需要的标签
+		var lis = $('ul').children;
+		var currentIndex = 0, indicatorIndex = 0;
+
+		//克隆li标签
+		$("ul").appendChild(lis[0].cloneNode(true));
+
+		//动态创建页码
+		for (var i = 0; i < lis.length - 1; i++) {
+			var li = document.createElement('li');
+			$("ol").appendChild(li);
+		}
+
+		//第一个选中
+		$("ol").children[0].className = "current";
+
+		//鼠标进入原点
+		var olLis = $("ol").children;
+		for (var j = 0; j < olLis.length; j++) {
+			(function (j) {
+				//获取单独的li标签
+				var li = olLis[j];
+
+				//鼠标进入
+				li.onmouseover = function () {
+					for (var i = 0; i < olLis.length; i++) {
+						olLis[i].className = "";
+					}
+
+					this.className = "current";
+
+					//动起来
+					constant($('ul'), -(750 * j), 100);
+					currentIndex = indicatorIndex = j;
+				};
+			})(j);
+		}
+
+		//自动轮播
+		var timer = setInterval(autoPlay, 1000);
+
+		//清除和设置定时器
+		$("slider").onmouseover = function () {
+			clearInterval(timer);
+		}
+
+		$("slider").onmouseout = function () {
+			timer = setInterval(autoPlay, 1000);
+		}
+
+
+
+
+		function autoPlay() {
+			//ul滚起来
+			currentIndex++;
+			if (currentIndex > lis.length - 1) {
+				$("ul").style.left = 0;
+				currentIndex = 1;
+			}
+			constant($("ul"), -currentIndex * 750, 100);
+
+			//指示器滚起来
+			indicatorIndex++;
+			if(indicatorIndex > olLis.length - 1) {
+				indicatorIndex = 0;
+			}
+			for (var i = 0; i < olLis.length; i++) {
+				olLis[i].className = "";
+			}
+
+			olLis[indicatorIndex].className = "current";
+		}
+	}
+</script>
+</body>
+</html>
