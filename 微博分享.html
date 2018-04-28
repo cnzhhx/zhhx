@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>zhhx</title>
+	<style type="text/css">
+		*{
+			border: 0;
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+
+		p{
+			margin: 100px;
+			width: 300px;
+		}
+
+		#share_weibo{
+            width: 26px;
+            height: 26px;
+            background: url("C:/Users/张浩翔/Documents/GitHub/zhhx/share.gif");
+            position: absolute;
+            display: none;
+            cursor: pointer;
+		}
+
+	</style>
+</head>
+<body>
+	<p id="word">25日上午，习近平总书记驱车一个半小时，从宜昌前往荆州。在荆州港码头登上轮船，顺江而下，考察长江。船行4个小时，抵达石首港。随后，他又驱车一个多小时，深入到长江湖南岳阳段考察。
+　　总书记不顾舟车劳顿，实地察看长江沿岸生态环境和发展建设情况，调查研究党中央提出的长江经济带“共抓大保护、不搞大开发”的要求落实到位了没有，下一步如何把长江经济带发展推向深入。</p>
+	<div id="share_weibo"></div>
+<script type="text/javascript" src="C:/Users/张浩翔/Documents/GitHub/zhhx/myFunc.js"></script>
+<script type="text/javascript">
+	window.onload = function () {
+		var selectedText;
+
+		//监听鼠标抬起
+		$("word").onmouseup = function (event) {
+			//兼容
+			var e = event || window.event;
+
+			//获取选中的文字
+			if (window.getSelection) {
+				selectedText = window.getSelection().toString();
+			}else {
+				selectedText = document.selection.createRange().text;
+			}
+
+			if (selectedText !== "") {
+				//显示面板
+				$("share_weibo").style.display = "block";
+
+				//改变位置
+				$("share_weibo").style.left = e.clientX + 'px';
+				$("share_weibo").style.top = e.clientY + 'px';
+			}
+			
+		};
+
+
+		//监听文档的点击
+		document.onmousedown = function (event) {
+			//兼容
+			var e = event || window.event;
+
+			//获取点击区域的id
+			var targetId = e.target ? e.target.id : e.srcElement.id;
+
+			//判断
+			if (targetId !== "share_weibo") {
+				$("share_weibo").style.display = "none";
+
+			}else{
+				window.location.href = 'http://v.t.sina.com.cn/share/share.php?searchPic=false&title=' + selectedText + '&url=https://github.com/xuanzhihua';
+			}
+
+            window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+		}
+	}
+</script>
+</body>
+</html>
