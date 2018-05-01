@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>zhhx</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		img{
+			vertical-align: top;
+		}
+
+		#box{
+			position: fixed;
+			right: 0;
+			bottom: 0;
+		}
+
+		#close{
+			width: 25px;
+			height: 25px;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<span id="close"></span>
+		<div id="top">
+			<img src="C:\Users\张浩翔\Documents\GitHub\zhhx\联动特效images\top.jpg">
+		</div>
+		<div id="bottom">
+			<img src="C:\Users\张浩翔\Documents\GitHub\zhhx\联动特效images\bottom.jpg">
+		</div>
+	</div>
+<script type="text/javascript" src="C:/Users/张浩翔/Documents/GitHub/zhhx/myFunc.js"></script>
+<script type="text/javascript">
+	window.onload = function () {
+		//获取需要的标签
+		var box = $("box");
+		var bottom = $("bottom");
+		var top = $("top");
+		var close = $("close");
+
+		//点击监听
+		close.onclick = function () {
+			buffer(bottom, {height: 0}, function () {
+				buffer(box, {width: 0}, function () {
+					close.style.display = "none";
+				});
+			});
+		}
+	}
+
+
+</script>
+</body>
+</html>
+
