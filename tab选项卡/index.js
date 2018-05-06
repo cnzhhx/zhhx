@@ -3,7 +3,6 @@ window.onload = function () {
 	var allLis = $('tab_header').getElementsByTagName('li');
 	var allDom = $('tab_content').getElementsByClassName('dom');
 
-
 	for (var i = 0; i < allLis.length; i++) {
 		var li = allLis[i];
 		li.index = i;
