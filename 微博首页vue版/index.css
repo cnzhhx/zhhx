@@ -1,0 +1,613 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+    vertical-align: top;
+}
+
+html, body{
+	height: 100%;
+	width: 100%;
+}
+
+.page{
+	height: 100%;
+	width: auto;
+	position: relative;
+	top: 0;
+	width: 0;
+}
+
+/*头部*/
+
+.top{
+	height: 50px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	border-bottom: 1px solid #ccc;
+	z-index: 9999;
+	background: white;
+	box-shadow: 1px 1px 1px #ccc;
+}
+
+.top-box{
+	width: 1200px;	
+	height: 100%;
+	margin: 0 auto;
+/*	background-color: red;	*/
+}
+
+.top-box-1{
+	float: left;
+	padding-top: 11px;
+	position: fixed;
+	left: 270px;
+}
+
+.top-box-2{
+	float: left;
+	height: 28px;
+}
+
+.top-box-2 input{
+	line-height: 28px;
+	color: #808080;
+	width: 470px;
+/*	border: none;*/
+	display: inline-block;
+	margin-top: 11px;
+	margin-left: 20px;
+	height: 28px;
+	padding-left: 3px;
+/*	background: red;*/
+
+}
+
+.top-box-3{
+	float: left;
+	height: 28px;
+/*	background: red;*/
+	width: 500px;
+	margin-top: 14px;
+}
+
+.top-box-3 ul li a{
+	text-decoration: none;
+	color: #000;
+	margin-right: 10px;
+	float: right;
+	font-size: 14px;
+}
+
+.top-box-4{
+	float: right;
+	height: 28px;
+	width: 70px;
+	margin-top: 14px;
+}
+
+.top-box-4 span a{
+	text-decoration: none;
+	font-size: 14px;
+	color: #000;
+}
+
+.top-box-4 span:nth-child(1) a{
+	border-right: 1px dashed #ccc;
+	padding-right: 4px;
+
+}
+
+/*左边*/
+.left{
+	width: 470px;
+	position: fixed;
+	top: 70px;
+/*	background: red;*/
+	height: 1000px;
+}
+
+.left-div{
+	float: right;
+	height: 100%;
+	width: 110px;
+/*	background: red;*/
+}
+
+.left-div ul li{
+	text-decoration: none;
+	line-height: 40px;
+	text-align: center;
+	margin-bottom: 7px;
+}
+
+.selected{
+	background: orangered;
+	border-radius: 4px;
+}
+
+.selected a{
+	color: white !important;
+}
+
+.selected1{
+	background: orangered;
+	border-radius: 4px;
+}
+
+.selected1 a{
+	color: white !important;
+}
+
+.left-div ul li a{
+	color: #000;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+/*中间*/
+.center-div{
+	position: relative;
+	left: 500px;
+	top: 70px;
+/*	background: red;*/
+	width: 660px;
+	height: auto;
+/*	overflow: hidden;*/
+}
+
+.center-div-img{
+	width: 660px;
+	height: 370px;
+/*	background: green;*/
+	overflow: hidden;
+	position:relative; 
+}
+
+.center-div-img ul{
+    width: 3960px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;	
+}
+
+.center-div-img ul li{
+	width: 660px;
+	float: left;
+}
+
+.center-div-img ul li a{
+	width: 660px;
+}
+
+.center-div-img ul li a img{
+	width: 660px;
+}
+
+.suoying{
+	position: absolute;
+/*	background: red;*/
+	left: 520px;
+	width: 140px;
+	top: 330px;
+}
+
+.suoying ol li{
+    width: 20px;
+    height: 20px;
+    background-color: darkgray;
+    display: inline-block;
+    margin-right: 3px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.suoying ol li:nth-child(6){
+	display: none;
+}
+
+.suoying ol li.suoyingindex{
+	background: orangered;
+}
+
+.center-div-xiaoxi{
+	width: 100%;
+	height: 5000px;
+	background-color: #f2f2f5;	
+	float: left;
+	margin-top: 20px;
+}
+
+/*右边*/
+
+.right{
+	position: relative;
+	top: -300px;
+	left: 1200px;
+	width: 340px;
+	height: 340px;
+	z-index: 99;
+}
+
+.right-1-box{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: auto;
+	width: 100%;
+	background-color: #f2f2f5;
+}
+
+.right-1-box-mianban{
+	width: 300px;
+	height: 290px;
+	background-color: white;
+	margin: 20px auto;
+	position: relative;
+	box-shadow: 0px 0px 2px #ccc;
+}
+
+.nice2{
+	display: none;
+}
+
+.right-1-box-mianban-1{
+	display: block;
+/*	background-color: red;*/
+	top: 20px;
+	position: absolute;
+	left: 30px;
+}
+
+.right-1-box-mianban-1 a{
+	margin-left: 40px;
+	color: #808080;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.right-selected{
+	color: #000 !important;
+	font-weight: 600;
+}
+
+.right-1-box-mianban-teshu{
+	height: 40px;
+	width: 40px;
+	float: right;
+	background: url(图片/sprite_login.png);
+	background-repeat: no-repeat;
+	background-position: 0px -150px;		
+	cursor: pointer;
+}
+
+.right-1-box-mianban-hengtiao{
+/*	background: red;*/
+	width: 260px;
+	height: 3px;
+	top: 50px;
+	left: 25px;
+	position: absolute;
+	border-bottom: 1px solid #ccc;
+}
+
+.right-1-box-mianban-hengtiao div{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+.right-1-box-mianban-hengtiao-selected{
+	background-color: #fa7d3c;
+}
+
+.nice2{
+	height: 270px;
+	width: 270px;
+/*	background: red;*/
+	position: relative;
+	top: 60px;
+}
+
+.nice2 div{
+	height: 190px;
+	width: 170px;
+	margin-left: 70px;
+	border: 1px solid #f3f3f3;
+	box-shadow: 0px 0px 4px #fff;
+}
+
+.nice2 div img{
+	height: 145px;
+	padding: 10px;
+}
+
+.nice2 div span{
+	float: left;
+	font-size: 10px;
+	padding-left: 10px;
+}
+
+.nice2-span{
+	font-size: 10px;
+	margin-left: 70px;
+	color: #808080;
+	padding-left: 18px;
+}
+
+.nice2 a{
+	text-decoration: none;
+	font-size: 10px;
+	color: #eb7350;
+}
+
+.username{
+	width: 270px;
+	height: 28px;
+	margin-top: 30px;
+	margin-left: 15px;
+	border: 1px solid #ccc;
+	background: #fff;
+	border-radius: 3px;
+}
+
+.password{
+	width: 270px;
+	height: 28px;	
+	margin-top: 10px;
+	margin-left: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	background: #fff;
+}
+
+.right-1-box-mianban-4{
+/*	background: red;*/
+	left: 15px;
+	top: 150px;
+	position: absolute;
+	width: 272px;
+	height: auto;
+}
+
+.right-1-box-mianban-4-check{
+	height: 20px;
+/*	background: red;*/
+	width: 272px;
+}
+
+.right-1-box-mianban-4-check input{
+	display: inline-block;
+	text-align: center;
+	margin-top: 3px;
+	float: left;
+}
+
+.right-1-box-mianban-4-check span{
+	float: left;
+	display: inline-block;
+	color: #808080;
+		font-size: 12px;
+}
+
+.right-1-box-mianban-4-check a{
+	float: right;
+	display: inline-block;
+	color: #808080;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.denglu{
+	background-color: #ff8140;
+	height: 40px;
+	width: 272px;
+	display: block;
+	border: 1px solid #ff8140;
+	border-radius: 3px;
+	color: #fff;
+	text-align: center;
+	margin-top: 10px;
+	line-height: 40px;
+	cursor: pointer;
+}
+
+.denglu:hover{
+	background: #f7671d;
+	border: 1px solid #f06923;
+}
+
+.right-1-box-mianban-4-last{
+	margin-top: 10px;
+}
+
+.right-1-box-mianban-4-last span{
+	font-size: 10px;
+	color: #808080;
+}
+
+.right-1-box-mianban-4-last a{
+	font-size: 10px;
+	color: #eb7350;
+	text-decoration: none;
+}
+
+.right-1-box-mianban-5{
+/*	background: red;*/
+	height: 25px;
+	width: 272px;
+	position: absolute;
+	top: 255px;
+	left: 15px;
+	border-top: 1px solid #ccc;
+	padding-top: 5px;
+}
+
+.right-1-box-mianban-5 span{
+	font-size: 10px;
+	color: #808080;
+}
+
+.right-1-box-mianban-5-tubiao{
+/*	background: red;*/
+	height: 16px;
+	width: 210px;
+	float: right;
+	/*background-repeat: no-repeat;
+	background-position: -20px -50px;
+	background-image: url(C:/Users/张浩翔/Documents/GitHub/zhhx/微博首页/图片/sprite_login.png);*/
+}
+
+.right-1-box-mianban-5-tubiao a{
+	float: left;
+	width: 16px;
+	height: 16px;
+	margin-left: 2px;
+/*	background-color: green;*/
+
+}
+
+.taobao{
+	background-image: url(图片/sprite_login.png);
+	background-repeat: no-repeat;
+	float: left;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-position: 0px -50px;
+}
+
+.qq{
+	background-image: url(图片/sprite_login.png);
+	background-repeat: no-repeat;
+	float: left;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-position: -50px -50px;	
+}
+
+.yidong{
+	background-image: url(图片/sprite_login.png);
+	background-repeat: no-repeat;
+	float: left;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-position: -300px -50px;	
+}
+
+.tianyi{
+	background-image: url(图片/sprite_login.png);
+	background-repeat: no-repeat;
+	float: left;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-position: -100px -50px;	
+}
+
+.zz360{
+	background-image: url(图片/sprite_login.png);
+	background-repeat: no-repeat;
+	float: left;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-position: -150px -50px;	
+}
+
+.liantong{
+	background-image: url(图片/sprite_login.png);
+	background-repeat: no-repeat;
+	float: left;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-position: -200px -50px;	
+}
+
+.baidu{
+	background-image: url(图片/sprite_login.png);
+	background-repeat: no-repeat;
+	float: left;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-position: -250px -50px;	
+}
+
+.right-2{
+	background-color: #f2f2f5;
+	height: 560px;
+	width: 340px;
+	top: 350px;
+	position: absolute;
+}
+
+.right-2-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.right-2-box img{
+	width: 120px;
+	float: right;
+	cursor: pointer;
+}
+
+.right-2-box span{
+	display: line-block;
+	height: 70px;
+	font-size: 20px;
+	width: 100%;
+	text-align: center;
+	line-height: 70px;
+	margin-left: 20px;
+	font-weight: 700;
+}
+
+.right-2-box div{
+	height: 90px;
+	width: 100%;
+
+}
+
+.right-2-box a{
+	text-decoration: none;
+	color: #333;
+	margin-left: 20px;
+	font-size: 14px;
+}
+
+.right-2-box a:hover{
+	color: #eb7350;
+}
+
+.right-2-box div:nth-child(7) {
+	height: 40px;
+	width: 100%;
+	border-top: 1px solid #ccc;
+}
+
+.right-2-box div:nth-child(7) a{
+	height: 100%;
+	width: 100%;
+	line-height: 40px;
+	text-align: center;
+	margin-left: 150px;
+}
+
+/*滚回顶部*/
+.gunhuiqu{
+	position: fixed;
+	top: 900px;
+	left: 1550px;
+	width: 40px;
+	height: 40px;
+	background-color: #ccc;
+}
