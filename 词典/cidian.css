@@ -1,0 +1,100 @@
+*{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		vertical-align: top;
+	}		
+
+	html, body{
+		height: 100%;
+		width: 100%;
+	}
+
+	.page{
+		height: 100%;
+		width: 100%;
+		text-align: center;
+	}
+
+	.head{
+		width: 500px;
+		margin: 100px auto;
+		font-size: 30px;
+	}
+
+	.selection{
+		width: 800px;
+		margin: 100px auto;
+	}
+
+	.selection a{
+		display: inline-block;
+		width: 90px;
+		font-size: 20px;
+		text-decoration: none;
+		color: #000;
+		height: 30px;
+		margin-left: 40px;
+/*		background-color: orangered;*/
+		border: 1px #ccc;
+		border-radius: 4px;
+	}
+
+	.selection a:nth-child(1){
+		background-color: orangered;
+	}
+
+	.body1{
+/*		display: none;*/
+	}
+
+	.go{
+		width: 600px;
+		font-size: 15px;
+		margin: 50px auto;
+		height: 25px;
+		padding-left: 10px;
+	}
+
+	.gogo{
+		width: 600px;
+		font-size: 15px;
+		margin: 50px auto;
+		height: 25px;
+		padding-left: 10px;
+	}
+
+	.translate{
+		width: 50px;
+		font-size: 15px;
+		margin: 50px auto;
+		height: 28px;
+	}
+
+	.body2{
+		display: none;
+	}
+
+	.add{
+		width: 600px;
+		font-size: 15px;
+		margin: 50px auto;
+		height: 25px;
+		padding-left: 10px;		
+	}
+
+	.addzh{
+		display: inline-block;
+		width: 600px;
+		font-size: 15px;
+		margin: 50px auto;
+		height: 25px;
+		padding-left: 10px;
+	}
+
+	.addyw{
+		width: 50px;
+		font-size: 15px;
+		margin: 50px auto;
+		height: 28px;
+	}
